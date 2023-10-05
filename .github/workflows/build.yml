@@ -6,7 +6,7 @@ on:
         -dev-environment
 
 env: 
-  HP_TOKEN : ${{secrets.HP_TOKEN}}
+  HP_TOKEN : ${{secrets.HP_GITHUBTOKEN}}
 
 jobs:
     build:
