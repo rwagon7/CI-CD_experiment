@@ -12,11 +12,6 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v3
-        - name: setting up java
-          uses: actions/setup-java@v3
-          with:
-            distribution: 'oracle'
-            java-version: '11'
 
         - name: executing remote ssh commands using password
           uses: appleboy/ssh-action@master
