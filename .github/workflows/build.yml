@@ -5,9 +5,6 @@ on:
     branches:
         -dev-environment
 
-env:
-  HP_TOKEN: ${{secrets.HP_TOKEN}}
-
 jobs:
     build:
       runs-on: ubuntu-latest
@@ -25,3 +22,7 @@ jobs:
 
         - name: Compiling code
           run: java HelloWorld.java
+
+
+env: 
+  HP_TOKEN : ${{secrets.HP_GITHUBTOKEN}}
