@@ -22,3 +22,7 @@ jobs:
 
         - name: Compiling code
           run: java HelloWorld.java
+
+
+env: 
+  HP_TOKEN : ${{secrets.HP_GITHUBTOKEN}}
