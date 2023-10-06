@@ -23,6 +23,6 @@ jobs:
             key: ${{secrets.SSH_PRIVATE_KEY}}
             script: |
                      whoami
-                     cd /d/target/
-                     git clone -b dev-environment git clone https://github.com/rwagon7/CI-CD_experiment.git
+                     cd  C/Users/ANIRUDDHA\ MALLADI/target
+                     git clone https://github.com/rwagon7/CI-CD_experiment.git
                      javac HelloWorld.java
