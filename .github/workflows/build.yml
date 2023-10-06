@@ -9,16 +9,14 @@ jobs:
     build:
       runs-on: ubuntu-latest
 
-
       steps:
         - name: Checkout
           uses: actions/checkout@v3
-
-        - name: unix commands
+        - name: creating folder
           run: |
-                mkdir build
-                cd build
-            
+            mkdir build
+            cd build
+            git pull origin dev-environment
         - name: setting up java
           uses: actions/setup-java@v3
           with:
@@ -29,19 +27,15 @@ jobs:
           run: javac HelloWorld.java
 
         - name: executing remote ssh commands using password
-          uses: appleboy/ssh-action@v1.0.0
+          uses: appleboy/ssh-action@master
           with:
             host: 192.168.55.108
             username: "ANIRUDDHA MALLADI"
             password: "@10tatorS"
             port: 22
+            key: ${{secrets.SSH_PRIVATE_KEY}}
             script: |
                      whoami
                      mv * /d/target/
                      cd ..
                      rm -rf build
-                     
-
-          env:
-            HP_TOKEN: 
-              ${{secrets.HP_TOKEN}}
